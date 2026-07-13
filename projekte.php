@@ -14,6 +14,25 @@
 
         <div class="project-grid">
             <article class="project-card">
+                <h3>MedKnow</h3>
+                <p>
+                    Desktop-Anwendung (JavaFX + MySQL) zur Vorbereitung auf medizinische
+                    Prüfungen, nach MVC- und DAO-Architektur. Mit Login inkl. BCrypt-Hashing,
+                    Prüfungsmodus mit Timer und Auswertung, Admin-Bereich für Fragen-CRUD
+                    sowie einem Dashboard mit Lernfortschritt und Statistiken.
+                </p>
+                <ul class="project-tags">
+                    <li>Java</li>
+                    <li>JavaFX</li>
+                    <li>MySQL / JDBC</li>
+                    <li>MVC + DAO</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/usmogier/medknow" class="button button--primary" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </article>
+
+            <article class="project-card">
                 <h3>Lernplattform für die Umschulung</h3>
                 <p>
                     Interaktives Karteikarten- und Quiz-Tool für die Lerninhalte meiner
