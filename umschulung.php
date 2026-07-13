@@ -1,5 +1,8 @@
 
-<?php include "templates/head.php" ?>
+<?php
+$pageTitle = 'Umschulung – Moritz Gierlinger';
+$pageDescription = 'Lerninhalte der Umschulung zum Fachinformatiker Anwendungsentwicklung als interaktive Karteikarten und Quiz.';
+include "templates/head.php" ?>
 <body>
     <canvas id="matrixCanvas"></canvas>
 

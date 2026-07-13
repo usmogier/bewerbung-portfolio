@@ -1,4 +1,7 @@
-<?php include "templates/head.php" ?>
+<?php
+$pageTitle = 'Impressum – Moritz Gierlinger';
+$pageDescription = 'Impressum von moritz-gierlinger.de.';
+include "templates/head.php" ?>
 
 <body>
     <canvas id="matrixCanvas"></canvas>

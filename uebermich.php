@@ -1,4 +1,7 @@
-<?php include "templates/head.php" ?>
+<?php
+$pageTitle = 'Über mich – Moritz Gierlinger';
+$pageDescription = 'Werdegang, Skills und Ausbildungsstand von Moritz Gierlinger, angehender Fachinformatiker für Anwendungsentwicklung.';
+include "templates/head.php" ?>
 
 <body>
     <canvas id="matrixCanvas"></canvas>

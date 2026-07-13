@@ -1,5 +1,7 @@
 <?php
 $status = $_GET['status'] ?? '';
+$pageTitle = 'Kontakt – Moritz Gierlinger';
+$pageDescription = 'Kontaktiere Moritz Gierlinger für Praktikumsangebote oder Fragen zur Anwendungsentwicklung.';
 include "templates/head.php" ?>
 
 <body>

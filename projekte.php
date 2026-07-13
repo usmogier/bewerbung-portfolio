@@ -1,4 +1,7 @@
-<?php include "templates/head.php" ?>
+<?php
+$pageTitle = 'Projekte – Moritz Gierlinger';
+$pageDescription = 'Eigene Softwareprojekte von Moritz Gierlinger aus der Umschulung zum Fachinformatiker Anwendungsentwicklung – mit Code auf GitHub.';
+include "templates/head.php" ?>
 
 <body>
     <canvas id="matrixCanvas"></canvas>
@@ -33,6 +36,7 @@
             </article>
 
             <article class="project-card">
+                <img src="images/pvs-screenshot.jpg" alt="Screenshot der PVS-Nürnberg-Anwendung: Mitarbeiterverwaltung">
                 <h3>PVS Nürnberg – Projektverwaltungssystem</h3>
                 <p>
                     Im 3er-Team entwickelte JavaFX-Desktopanwendung zur Verwaltung

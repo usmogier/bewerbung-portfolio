@@ -1,4 +1,7 @@
-<?php include "templates/head.php" ?>
+<?php
+$pageTitle = 'Datenschutzerklärung – Moritz Gierlinger';
+$pageDescription = 'Datenschutzerklärung von moritz-gierlinger.de.';
+include "templates/head.php" ?>
 
 <body>
     <canvas id="matrixCanvas"></canvas>
