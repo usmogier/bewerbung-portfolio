@@ -1,0 +1,33 @@
+/* --- BUTTON --- */
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 28px;
+    background-color: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-family: 'Fira Code', monospace;
+    letter-spacing: 0.5px;
+    transition: all 0.25s ease;
+}
+
+.button:hover {
+    background-color: var(--accent);
+    color: var(--bg);
+    box-shadow: 0 0 20px rgba(52, 211, 153, 0.35);
+    transform: translateY(-2px);
+}
+
+.button--primary {
+    background-color: var(--accent);
+    color: var(--bg);
+}
+
+.button--primary:hover {
+    background-color: var(--accent-strong);
+    border-color: var(--accent-strong);
+    color: var(--bg);
+}

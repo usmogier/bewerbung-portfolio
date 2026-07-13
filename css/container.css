@@ -1,0 +1,192 @@
+/* --- CONTAINER --- */
+.container {
+    background-color: var(--bg-elevated);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+    text-align: center;
+
+    width: 100%;
+    box-sizing: border-box;
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+/* --- TEXTE --- */
+
+.eyebrow {
+    color: var(--accent);
+    font-family: 'Fira Code', monospace;
+    font-size: 0.95rem;
+    letter-spacing: 1px;
+    margin: 0 0 10px;
+}
+
+.container p {
+    text-align: center;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+    font-family: 'Roboto', sans-serif;
+    color: var(--text);
+}
+
+.container h1 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+}
+
+/* Profilseite ("Über mich"): Überschrift bleibt zentriert, Fließtext liest sich links besser */
+.profile p {
+    text-align: left;
+}
+
+.container h2 {
+    margin: 40px 0 18px;
+    font-size: 1.4rem;
+    font-family: 'Fira Code', monospace;
+    color: var(--accent);
+    text-align: left;
+}
+
+/* --- RECHTSTEXTE (Impressum, Datenschutz) --- */
+.legal h1 {
+    text-align: left;
+}
+
+.legal p {
+    text-align: left;
+}
+
+.legal-list {
+    text-align: left;
+    padding-left: 20px;
+    margin: 0 0 20px;
+}
+
+.legal-list li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* --- SKILLS --- */
+.skill-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-list li {
+    padding: 6px 16px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+    color: var(--accent);
+    background: var(--accent-soft);
+}
+
+/* --- WERDEGANG / TIMELINE --- */
+.timeline {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+}
+
+.timeline li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 16px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+}
+
+.timeline li:last-child {
+    border-bottom: none;
+}
+
+.timeline-date {
+    flex: 0 0 130px;
+    color: var(--text-muted);
+    font-family: 'Fira Code', monospace;
+    font-size: 0.9rem;
+}
+
+.timeline-text {
+    flex: 1 1 300px;
+}
+
+/* --- HERO (Startseite) --- */
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 10px;
+}
+
+
+/* --- Lernplattform --- */
+
+.learning-container hr {
+    border: 0;
+    height: 1px;
+    background: #00ff41;
+    margin: 40px 0;
+    opacity: 0.3;
+}
+
+/*  Style für Kontakt*/
+.container a[href^="mailto:"] {
+color: var(--accent);
+text-decoration: none;
+border-bottom: 1px dashed var(--accent);
+transition: all 0.3s ease;
+font-family: 'Fira Code', monospace;
+}
+
+.container a[href^="mailto:"]:hover {
+color: var(--text);
+border-bottom: 1px solid var(--text);
+}
+
+/*  Status-Meldung Kontaktformular */
+.form-status {
+    max-width: 500px;
+    margin: 0 auto 20px;
+    padding: 14px 20px;
+    border-radius: 8px;
+    font-family: 'Fira Code', monospace;
+    font-size: 0.95rem;
+}
+
+.form-status--success {
+    background: var(--accent-soft);
+    border: 1px solid var(--accent);
+    color: var(--accent);
+}
+
+.form-status--error {
+    background: rgba(248, 113, 113, 0.12);
+    border: 1px solid #f87171;
+    color: #f87171;
+}
+
+/*  Style für Admin-Login*/
+
+.login-box {
+                background: #1a1a1a;
+                padding: 30px;
+                border: 1px solid #00ff41;
+                border-radius: 8px;
+                text-align: center;
+                width: 300px;
+            }

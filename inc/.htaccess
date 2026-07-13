@@ -1,0 +1,11 @@
+# Dieses Verzeichnis enthält keine Seiten, sondern nur per include()/require()
+# eingebundene Konfigurationsdateien mit Zugangsdaten. Direkter Web-Zugriff wird
+# deshalb komplett gesperrt (PHP kann die Dateien trotzdem lokal einbinden).
+
+<IfModule mod_authz_core.c>
+    Require all denied
+</IfModule>
+<IfModule !mod_authz_core.c>
+    Order allow,deny
+    Deny from all
+</IfModule>

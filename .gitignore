@@ -1,0 +1,9 @@
+# Zugangsdaten – niemals committen (siehe inc/*.example.php für die Struktur)
+/inc/db-config.php
+/inc/admin-config.php
+
+# Privates Projekt, nicht Teil des öffentlichen Portfolios
+/paradies/
+
+# Editor-/Tooling-Konfiguration
+/.claude/
