@@ -1,0 +1,56 @@
+<?php include "templates/head.php" ?>
+
+<body>
+    <canvas id="matrixCanvas"></canvas>
+    <?php include "templates/nav.php" ?>
+
+    <div class="container projects">
+        <p class="eyebrow">Projekte</p>
+        <h1>Was ich bisher gebaut habe</h1>
+        <p>
+            Eine Auswahl an Projekten, an denen ich während und neben der Umschulung
+            arbeite. Der Code ist öffentlich auf GitHub einsehbar.
+        </p>
+
+        <div class="project-grid">
+            <article class="project-card">
+                <h3>Lernplattform für die Umschulung</h3>
+                <p>
+                    Interaktives Karteikarten- und Quiz-Tool für die Lerninhalte meiner
+                    Umschulung, mit eigenem Admin-Panel zur Verwaltung von Kategorien,
+                    Modulen und Fragen. Die Inhalte kommen live aus einer MySQL-Datenbank
+                    über eine selbst gebaute PHP-API.
+                </p>
+                <ul class="project-tags">
+                    <li>PHP</li>
+                    <li>MySQL / PDO</li>
+                    <li>JavaScript</li>
+                    <li>REST-API</li>
+                </ul>
+                <div class="project-links">
+                    <a href="umschulung.php" class="button button--primary">Live ansehen</a>
+                    <a href="https://github.com/usmogier/bewerbung-portfolio" class="button" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <h3>Diese Bewerbungs-Website</h3>
+                <p>
+                    Diese Seite selbst: ein PHP-Template-System mit eigenem Matrix-Theme,
+                    einem funktionierenden Kontaktformular inkl. Spam-Schutz, DSGVO-konformer
+                    Datenschutzerklärung und sauber abgesicherten Zugangsdaten.
+                </p>
+                <ul class="project-tags">
+                    <li>PHP</li>
+                    <li>HTML/CSS</li>
+                    <li>JavaScript</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/usmogier/bewerbung-portfolio" class="button button--primary" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+    <?php include "templates/footer.php" ?>
+</body>
