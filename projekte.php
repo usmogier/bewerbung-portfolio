@@ -14,6 +14,27 @@
 
         <div class="project-grid">
             <article class="project-card">
+                <h3>PVS Nürnberg – Projektverwaltungssystem</h3>
+                <p>
+                    Im 3er-Team entwickelte JavaFX-Desktopanwendung zur Verwaltung
+                    städtischer Vorhaben: Mitarbeiter- und Stammdatenpflege, Projektbesetzung
+                    mit historisierter Projektleitung sowie ein Ticketing-Modul nach dem
+                    Vier-Augen-Prinzip. Mein Schwerpunkt war die Datenbankentwicklung –
+                    Schema (3NF), SQL und die DAO-Schicht.
+                </p>
+                <ul class="project-tags">
+                    <li>Java</li>
+                    <li>JavaFX</li>
+                    <li>MySQL</li>
+                    <li>MVC + DAO</li>
+                    <li>Teamprojekt</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/usmogier/pvs-nuernberg" class="button button--primary" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </article>
+
+            <article class="project-card">
                 <h3>MedKnow</h3>
                 <p>
                     Desktop-Anwendung (JavaFX + MySQL) zur Vorbereitung auf medizinische
