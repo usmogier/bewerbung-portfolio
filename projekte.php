@@ -17,6 +17,7 @@ include "templates/head.php" ?>
 
         <div class="project-grid">
             <article class="project-card">
+                <img src="images/kochrezepte-screenshot.png" alt="Screenshot der Kochrezepte-Anwendung: Rezeptliste mit Detailansicht">
                 <h3>Kochrezepte</h3>
                 <p>
                     JavaFX-Desktopanwendung zur Verwaltung von Kochrezepten mit Kategorien,
