@@ -59,6 +59,7 @@ include "templates/head.php" ?>
             </article>
 
             <article class="project-card">
+                <img src="images/medknow-screenshot.png" alt="Screenshot der MedKnow-Anwendung: Dashboard mit Live-Kennzahlen">
                 <h3>MedKnow</h3>
                 <p>
                     Desktop-Anwendung (JavaFX + MySQL) zur Vorbereitung auf medizinische
