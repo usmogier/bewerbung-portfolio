@@ -14,6 +14,25 @@
 
         <div class="project-grid">
             <article class="project-card">
+                <h3>Kochrezepte</h3>
+                <p>
+                    JavaFX-Desktopanwendung zur Verwaltung von Kochrezepten mit Kategorien,
+                    Zutatenlisten und Suche. Sauber getrennt nach MVC mit zusätzlicher
+                    DAO- und Service-Schicht; die Datenbank inkl. Schema wird beim ersten
+                    Start automatisch angelegt.
+                </p>
+                <ul class="project-tags">
+                    <li>Java</li>
+                    <li>JavaFX</li>
+                    <li>MySQL</li>
+                    <li>MVC + DAO</li>
+                </ul>
+                <div class="project-links">
+                    <a href="https://github.com/usmogier/kochrezepte" class="button button--primary" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </article>
+
+            <article class="project-card">
                 <h3>PVS Nürnberg – Projektverwaltungssystem</h3>
                 <p>
                     Im 3er-Team entwickelte JavaFX-Desktopanwendung zur Verwaltung
