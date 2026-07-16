@@ -1,7 +1,13 @@
 <?php
 $pageTitle = $pageTitle ?? 'Moritz Gierlinger – Anwendungsentwicklung';
 $pageDescription = $pageDescription ?? 'Portfolio von Moritz Gierlinger, angehender Fachinformatiker für Anwendungsentwicklung auf der Suche nach einem Praktikumsplatz.';
-$canonicalUrl = 'https://moritz-gierlinger.de/' . basename($_SERVER['PHP_SELF']);
+$prettyPaths = [
+    'index.php' => 'Startseite',
+    'impressum.php' => 'Impressum',
+    'datenschutz.php' => 'Datenschutz',
+];
+$currentScript = basename($_SERVER['PHP_SELF']);
+$canonicalUrl = 'https://moritz-gierlinger.de/' . ($prettyPaths[$currentScript] ?? $currentScript);
 ?>
 <!DOCTYPE html>
 <html lang="de">

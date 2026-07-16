@@ -2,13 +2,13 @@
 declare(strict_types=1);
 
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    header('Location: kontakt.php');
+    header('Location: Startseite#kontakt');
     exit;
 }
 
 // Spam-Falle: Bots füllen versteckte Felder aus, echte Besucher nicht
 if (($_POST['website'] ?? '') !== '') {
-    header('Location: kontakt.php?status=success');
+    header('Location: Startseite?status=success#kontakt');
     exit;
 }
 
@@ -25,7 +25,7 @@ $isValid = $name !== '' && mb_strlen($name) <= 100
     && $nachricht !== '' && mb_strlen($nachricht) <= 5000;
 
 if (!$isValid) {
-    header('Location: kontakt.php?status=error');
+    header('Location: Startseite?status=error#kontakt');
     exit;
 }
 
@@ -43,5 +43,5 @@ $headers = [
 
 $erfolg = mail($empfaenger, $betreff, $inhalt, implode("\r\n", $headers));
 
-header('Location: kontakt.php?status=' . ($erfolg ? 'success' : 'error'));
+header('Location: Startseite?status=' . ($erfolg ? 'success' : 'error') . '#kontakt');
 exit;

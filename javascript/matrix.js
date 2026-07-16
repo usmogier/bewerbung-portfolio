@@ -17,12 +17,13 @@ window.addEventListener('resize', () => {
     drops = Array(columns).fill(1);
 });
 
+const matrixColor = getComputedStyle(document.body).getPropertyValue('--matrix-accent').trim();
+
 function drawMatrix() {
     ctx.fillStyle = 'rgba(10, 10, 10, 0.05)';
     ctx.fillRect(0, 0, width, height);
 
-    const computedStyle = getComputedStyle(document.body);
-    ctx.fillStyle = computedStyle.getPropertyValue('--matrix-accent').trim();
+    ctx.fillStyle = matrixColor;
     ctx.font = `${fontSize}px monospace`;
 
     for (let i = 0; i < drops.length; i++) {
@@ -36,4 +37,4 @@ function drawMatrix() {
     }
 }
 
-setInterval(drawMatrix, 33);
+setInterval(drawMatrix, 60);

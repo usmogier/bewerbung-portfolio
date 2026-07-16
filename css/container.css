@@ -1,19 +1,39 @@
 /* --- CONTAINER --- */
 .container {
-    background-color: var(--bg-elevated);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    border: 1px solid var(--border);
+    background-color: rgba(22, 27, 34, 0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid var(--accent);
     color: var(--text);
     padding: 40px;
     border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
     text-align: center;
 
     width: 100%;
     box-sizing: border-box;
     max-width: 800px;
     margin: 40px auto;
+
+    animation: container-glow-pulse 5s ease-in-out infinite;
+}
+
+@keyframes container-glow-pulse {
+    0%, 100% {
+        border-color: rgba(0, 255, 65, 0.3);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), 0 0 6px rgba(0, 255, 65, 0.2);
+    }
+    50% {
+        border-color: rgba(0, 255, 65, 0.9);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), 0 0 25px rgba(0, 255, 65, 0.7), 0 0 45px rgba(0, 255, 65, 0.25);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .container {
+        animation: none;
+        border-color: rgba(0, 255, 65, 0.5);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35), 0 0 12px rgba(0, 255, 65, 0.35);
+    }
 }
 
 /* --- TEXTE --- */
@@ -38,11 +58,18 @@
 .container h1 {
     margin-bottom: 20px;
     font-size: 2.5rem;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    hyphens: auto;
 }
 
 /* Profilseite ("Über mich"): Überschrift bleibt zentriert, Fließtext liest sich links besser */
 .profile p {
     text-align: left;
+}
+
+.profile .eyebrow {
+    text-align: center;
 }
 
 .container h2 {
@@ -74,10 +101,44 @@
 }
 
 /* --- SKILLS --- */
+.skills-marquee {
+    overflow: hidden;
+    width: 100%;
+    -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+    mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
+}
+
+.skills-track {
+    display: flex;
+    width: max-content;
+    gap: 10px;
+    animation: skills-scroll 18s linear infinite;
+}
+
+.skills-marquee:hover .skills-track {
+    animation-play-state: paused;
+}
+
+@keyframes skills-scroll {
+    from {
+        transform: translateX(-50%);
+    }
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .skills-track {
+        animation: none;
+    }
+}
+
 .skill-list {
     list-style: none;
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
     gap: 10px;
     padding: 0;
     margin: 0;
@@ -91,6 +152,7 @@
     font-size: 0.9rem;
     color: var(--accent);
     background: var(--accent-soft);
+    white-space: nowrap;
 }
 
 /* --- WERDEGANG / TIMELINE --- */
@@ -125,12 +187,109 @@
 }
 
 /* --- PROJEKTE --- */
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
+.project-carousel {
     margin-top: 30px;
     text-align: left;
+}
+
+.project-counter {
+    text-align: center;
+    font-family: 'Fira Code', monospace;
+    color: var(--accent);
+    font-size: 1rem;
+    letter-spacing: 1px;
+    margin: 0 0 16px;
+}
+
+.project-carousel-nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.project-viewport {
+    flex: 1 1 auto;
+    min-width: 0;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    gap: 12px;
+}
+
+.carousel-arrow {
+    flex: 0 0 auto;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: transparent;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    font-size: 1.3rem;
+    line-height: 1;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+}
+
+.carousel-arrow:hover {
+    background: var(--accent);
+    color: #000;
+    box-shadow: 0 0 15px rgba(0, 255, 65, 0.4);
+}
+
+.project-viewport .project-card {
+    display: none;
+}
+
+.project-viewport .project-card.is-active {
+    display: flex;
+    flex: 0 0 300px;
+    max-width: 300px;
+    order: 2;
+    z-index: 2;
+    animation: fadeIn 0.4s ease;
+}
+
+.project-viewport .project-card.is-prev,
+.project-viewport .project-card.is-next {
+    display: flex;
+    flex: 0 0 110px;
+    max-width: 110px;
+    opacity: 0.35;
+    filter: saturate(0.4);
+    transform: scale(0.92);
+    pointer-events: none;
+    overflow: hidden;
+    transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.project-viewport .project-card.is-prev {
+    order: 1;
+}
+
+.project-viewport .project-card.is-next {
+    order: 3;
+}
+
+/* Auf den schmalen Vorschaukarten reicht Bild + Titel */
+.project-viewport .project-card:not(.is-active) p,
+.project-viewport .project-card:not(.is-active) .project-tags,
+.project-viewport .project-card:not(.is-active) .project-links {
+    display: none;
+}
+
+@media (max-width: 700px) {
+    .project-viewport .project-card.is-prev,
+    .project-viewport .project-card.is-next {
+        display: none;
+    }
+
+    .project-viewport .project-card.is-active {
+        flex: 1 1 auto;
+        max-width: 100%;
+    }
 }
 
 .project-card {
@@ -138,7 +297,6 @@
     border: 1px solid var(--border);
     border-radius: 12px;
     padding: 24px;
-    display: flex;
     flex-direction: column;
     transition: all 0.25s ease;
 }

@@ -6,10 +6,29 @@
         padding: 20px;
     }
 
+    .container h1 {
+        font-size: 1.8rem;
+    }
+
+    .navbar {
+        padding: 12px 0;
+    }
+
+    .navbar-toggle {
+        display: flex;
+    }
+
     .navbar ul {
         flex-direction: column;
         align-items: center;
         /* Zentriert die Links mobil */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+
+    .navbar ul.is-open {
+        max-height: 400px;
     }
 
     .navbar a {

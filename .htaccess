@@ -1,0 +1,16 @@
+RewriteEngine On
+
+# Schöne URLs: /Startseite, /Impressum, /Datenschutz statt .php-Dateinamen
+RewriteRule ^Startseite/?$ index.php [L]
+RewriteRule ^Impressum/?$ impressum.php [L]
+RewriteRule ^Datenschutz/?$ datenschutz.php [L]
+
+# Alte .php-URLs dauerhaft (301) auf die schönen URLs umleiten
+RewriteCond %{THE_REQUEST} \s/(?:[^\s?]*/)?index\.php[\s?] [NC]
+RewriteRule ^index\.php$ /Startseite [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/(?:[^\s?]*/)?impressum\.php[\s?] [NC]
+RewriteRule ^impressum\.php$ /Impressum [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/(?:[^\s?]*/)?datenschutz\.php[\s?] [NC]
+RewriteRule ^datenschutz\.php$ /Datenschutz [R=301,L]

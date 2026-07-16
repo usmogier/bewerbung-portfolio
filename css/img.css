@@ -24,3 +24,8 @@
     object-fit: cover;
     border-radius: 50%;
 }
+
+.container img.logo-round {
+    width: 280px;
+    border-radius: 50%;
+}

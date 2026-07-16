@@ -1,4 +1,16 @@
 /* --- NAVIGATION --- */
+html {
+    scroll-behavior: smooth;
+}
+
+section[id] {
+    scroll-margin-top: 90px;
+    transform: scale(1);
+    transform-origin: center center;
+    transition: transform 0.1s ease-out;
+    will-change: transform;
+}
+
 .navbar {
     background-color: var(--bg-elevated);
     backdrop-filter: blur(6px);
@@ -6,9 +18,50 @@
     border-bottom: 1px solid var(--border);
     width: 100%;
     padding: 15px 0;
+    box-sizing: border-box;
+    min-height: 60px;
     position: sticky;
     top: 0;
     z-index: 10;
+}
+
+.navbar-toggle {
+    display: none;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    width: 40px;
+    height: 36px;
+    background: transparent;
+    border: 2px solid var(--accent);
+    border-radius: 6px;
+    cursor: pointer;
+    z-index: 20;
+}
+
+.navbar-toggle-bar {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: var(--accent);
+    transition: transform 0.25s ease, opacity 0.25s ease;
+}
+
+.navbar-toggle[aria-expanded="true"] .navbar-toggle-bar:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.navbar-toggle[aria-expanded="true"] .navbar-toggle-bar:nth-child(2) {
+    opacity: 0;
+}
+
+.navbar-toggle[aria-expanded="true"] .navbar-toggle-bar:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 .navbar ul {
